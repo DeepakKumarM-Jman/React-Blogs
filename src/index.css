@@ -1,10 +1,16 @@
-*{
-  box-sizing: border-box;
+@import "tailwindcss";
+@tailwind utilities;
+
+* {
+  /* box-sizing: border-box; */
   margin: 0;
   padding: 0;
 }
 
 body {
-  padding: 40px;
-  font-family: 'Franklin Gothic Medium', Arial;
+  font-family: "Franklin Gothic Medium", Arial;
+}
+
+@utility text-gradient {
+  @apply bg-linear-to-r from-[#d6c7ff] to-[#ab8bff] bg-clip-text text-transparent;
 }
