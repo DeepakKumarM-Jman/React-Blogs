@@ -28,7 +28,7 @@ const EditBlog = () => {
     localStorage.setItem("blogs", JSON.stringify(updatedBlogs));
 
     alert("Blog updated successfully!");
-    navigate(`/blogs/${id}`);
+    navigate(`/blog/${id}`);
   };
 
   if (!blog) return <div className="text-center text-xl">Loading...</div>;
@@ -73,7 +73,7 @@ const EditBlog = () => {
         />
 
         {/* Submit Button */}
-        <button type="submit" className="w-full bg-green-500 text-white py-2 rounded-lg hover:bg-green-600">
+        <button type="submit" className="bg-gray-600 text-white px-6 py-2 rounded-md transition ease-in-out duration-200 hover:scale-110 hover:bg-black">
           Update Blog
         </button>
       </form>

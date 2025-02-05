@@ -56,7 +56,7 @@ const BlogPage = () => {
 
   return (
     <>
-    <div className="max-w-3xl mx-auto mt-10 bg-white shadow-md p-6 rounded-lg">
+    <div className="max-w-3xl mx-auto mt-10 bg-white shadow-lg p-6 rounded-lg">
       <img src={blog.image} alt={blog.title} className="w-full h-64 object-cover rounded-lg mb-4" />
       <h1 className="text-3xl font-bold">{blog.title}</h1>
       <p className="text-gray-600 mt-2">By <strong>{blog.author}</strong> | Views: {blog.views}</p>
@@ -90,7 +90,7 @@ const BlogPage = () => {
               </div>
             ))
           ) : (
-            <p>No comments yet.</p>
+            <p className="text-center">No comments yet.</p>
           )}
         </div>
 
@@ -99,12 +99,12 @@ const BlogPage = () => {
             value={newComment}
             onChange={(e) => setNewComment(e.target.value)}
             rows="1"
-            className="w-full p-2 border rounded-md mb-2 items-center"
+            className="w-full p-2 border rounded-md mb-2 items-center field-sizing-content"
             placeholder="Write a comment..."
           ></textarea>
           <button
             onClick={handleAddComment}
-            className="bg-blue-500 text-white px-6 h-11 rounded-md hover:bg-blue-600 "
+            className="bg-gray-600 text-white px-6 py-2 rounded-md transition ease-in-out duration-200 hover:scale-110 hover:bg-black"
           >
             Add
           </button>

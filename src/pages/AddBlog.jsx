@@ -66,7 +66,7 @@ const AddBlog = () => {
         <ReactQuill
           value={content}
           onChange={setContent}
-          className="bg-white"
+          className="bg-white field-sizing-content"
           theme="snow"
         />
 

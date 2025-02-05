@@ -43,7 +43,7 @@ const Blogs = () => {
               </Link>
               <button
                 onClick={() => toggleLike(blog.id)}
-                className={`w-full py-2 ${likedBlogs.includes(blog.id) ? "bg-red-500 text-white" : "bg-gray-200 text-gray-600"} hover:opacity-80`}
+                className={`w-full py-2 ${likedBlogs.includes(blog.id) ? "bg-red-300 text-white" : "bg-gray-200 text-gray-600"} hover:opacity-80`}
               >
                 {likedBlogs.includes(blog.id) ? "Liked ❤️" : "Like 🤍"}
               </button>

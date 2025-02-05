@@ -40,13 +40,13 @@ const FavoriteBlogs = () => {
               <div className="flex justify-between mt-4">
                 <button 
                   onClick={() => navigate(`/blog/${blog.id}`)}
-                  className="bg-blue-500 text-white px-3 py-1 rounded-md hover:bg-blue-600"
+                  className="bg-gray-600 text-white px-6 py-2 rounded-md transition ease-in-out duration-200 hover:scale-110 hover:bg-black"
                 >
                   View
                 </button>
                 <button 
                   onClick={() => handleUnlike(blog.id)}
-                  className="bg-red-500 text-white px-3 py-1 rounded-md hover:bg-red-600"
+                  className="bg-gray-600 text-white px-6 py-2 rounded-md transition ease-in-out duration-200 hover:scale-110 hover:bg-black"
                 >
                   Unlike
                 </button>
