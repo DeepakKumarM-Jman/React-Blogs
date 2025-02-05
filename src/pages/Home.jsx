@@ -1,30 +1,46 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+// import { sampleBlogs } from "../utils/localStorageUtils";
 
 const Home = () => {
+  // const [blogs, setBlogs] = useState([]);
   const [popularBlogs, setPopularBlogs] = useState([]);
 
   useEffect(() => {
+    // const allBlogs = JSON.parse(localStorage.getItem("blogs")) || [];
+    // setBlogs(allBlogs);
     const storedBlogs = JSON.parse(localStorage.getItem("blogs")) || [];
     const sortedBlogs = storedBlogs.sort((a, b) => b.views - a.views).slice(0, 5);
     setPopularBlogs(sortedBlogs);
   }, []);
 
+  // function addSampleBlogs(){
+  //   localStorage.setItem("blogs", JSON.stringify(sampleBlogs));
+  //   setBlogs(sampleBlogs);
+  // }
+
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-      {/* Caption Section */}
       <div className="text-center mb-10">
-        <h1 className="text-4xl font-bold text-gray-800">Welcome to BlogSite</h1>
+        <h1 className="text-4xl font-bold text-gray-800">Welcome to ReactBlogs</h1>
         <p className="text-lg text-gray-600 mt-2">Read, write, and share amazing stories!</p>
       </div>
 
-      {/* Popular Blogs Section */}
+      {/* {popularBlogs.length === 0 && (
+        <button
+          onClick={addSampleBlogs}
+          className="mt-6 bg-blue-500 text-white px-6 py-2 rounded-md hover:bg-blue-600 transition"
+        >
+          Add Sample Blogs
+        </button>
+      )} */}
+
       <div>
         <h2 className="text-2xl font-semibold mb-5">Popular Blogs</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           {popularBlogs.length > 0 ? (
             popularBlogs.map((blog) => (
-              <Link to={`/blog/${blog.id}`} key={blog.id} className="block bg-white shadow-md rounded-lg overflow-hidden hover:shadow-lg transition">
+              <Link to={`/blog/${blog.id}`} key={blog.id} className="block bg-white shadow-md rounded-lg overflow-hidden hover:shadow-lg transition" style={{ width: '330px', height: '280px' }}>
                 <img src={blog.image} alt={blog.title} className="w-full h-40 object-cover" />
                 <div className="p-4">
                   <h3 className="text-lg font-bold text-gray-800">{blog.title}</h3>

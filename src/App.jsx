@@ -20,8 +20,8 @@ const App = () => {
               <Route path="/blogs" element={<Blogs />} />
               <Route path="/blog/:id" element={<Blog />} />
               <Route path="/add-blog" element={<AddBlog />} />
-              <Route path="/edit-blog" element={<EditBlog />} />
-              <Route path="/favorite-blogs" element={<FavoriteBlogs />} />
+              <Route path="/edit/:id" element={<EditBlog />} />
+              <Route path="/favorites" element={<FavoriteBlogs />} />
             </Routes>
           </main>
           <Footer />
